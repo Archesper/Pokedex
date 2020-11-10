@@ -1,0 +1,72 @@
+
+body {
+    font-family: 'Comic Sans MS' !important;
+    background-color: rgb(255, 222, 217) !important;
+}
+
+#list_view {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.list_card {
+    padding: 1%;
+    margin: 1%;
+    width: 25% !important;
+    border-width: 4px !important;
+    border-style: inset !important;
+    border-radius: 10px !important;
+}
+
+.list_id {color: rgb(168, 151, 151); font-size: 0.9em;}
+.list_name {
+    font-weight: bolder !important;
+    font-style: italic;
+}
+
+.artwork {height: 300px !important}
+
+.my_btn {
+    margin: 1%;
+    padding: 2%;
+    border-radius: 5px;
+}
+
+.Normal{background-color: #A8A77A}
+.Fire {background-color:EE8130}
+.Water {background-color:6390F0}
+.Electric {background-color:F7D02C}
+.Grass {background-color:7AC74C}
+.Ice {background-color:96D9D6}
+.Fighting {background-color:C22E28}
+.Poison {background-color:A33EA1}
+.Ground {background-color:E2BF65}
+.Flying {background-color:A98FF3}
+.Psychic{background-color:F95587}
+.Bug {background-color:A6B91A}
+.Rock {background-color:B6A136}
+.Ghost {background-color:735797}
+.Dragon {background-color:6F35FC}
+.Dark {background-color:705746}
+.Steel {background-color:B7B7CE}
+.Fairy {background-color:D685AD}
+
+.Normal{border-color: #A8A77A !important}
+.Fire {border-color:#EE8130 !important}
+.Water {border-color:#6390F0 !important}
+.Electric {border-color:#F7D02C !important}
+.Grass {border-color:#7AC74C !important}
+.Ice {border-color:#96D9D6 !important}
+.Fighting {border-color:#C22E28 !important}
+.Poison {border-color:#A33EA1 !important}
+.Ground {border-color:#E2BF65 !important}
+.Flying {border-color:#A98FF3 !important}
+.Psychic{border-color:#F95587 !important}
+.Bug {border-color:#A6B91A !important}
+.Rock {border-color:#B6A136 !important}
+.Ghost {border-color:#735797 !important}
+.Dragon {border-color:#6F35FC !important}
+.Dark {border-color:#705746 !important}
+.Steel {border-color:#B7B7CE !important}
+.Fairy {border-color:#D685AD !important}

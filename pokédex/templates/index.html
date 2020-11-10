@@ -1,0 +1,28 @@
+<head>
+    <title>Pokédex</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='styles.css')}}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css"
+        integrity="sha384-DhY6onE6f3zzKbjUPRc2hOzGAdEf4/Dz+WJwBvEYL/lkkIsI3ihufq9hk9K4lVoK" crossorigin="anonymous">
+</head>
+
+<body>
+    <div id="list_view">
+        {% for species in context %}
+
+        <div class="card list_card {{species['types'][0]}}" style="width: 18rem;">
+            <img src="{{species['artwork']}}" class="card-img-top artwork" alt="...">
+            <div class="card-body">
+                <h5 class="list_name">
+                    {{species['name']}} <span class="list_id"> #{{species['id']}} </span></h5>
+                <div class="type-wrapper">
+                    {% for type in species['types'] %}
+                    <span class="my_btn {{type}}">
+                        {{type}}
+                    </span>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</body>
