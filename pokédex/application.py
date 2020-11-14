@@ -52,5 +52,7 @@ def pokedex():
 
 
 if __name__ == "__main__":
-    app.run()
+    webview.create_window('Pokédex', app, width=1000, height=650, resizable=False)
+    webview.start()
+    "app.run()"
 
