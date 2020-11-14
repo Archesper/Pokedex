@@ -31,6 +31,43 @@ body {
     margin: 1%;
     padding: 2%;
     border-radius: 5px;
+    text-transform: uppercase;
+    color: white;
+    font-weight: bold;
+    font-size: 0.75em;
+    width: 33%;
+}
+
+input[type='radio'] {
+    margin: 1%;
+}
+
+#pokésearch {
+    margin: 1% auto;
+    width: 50%;
+}
+#pokésearch:focus {
+    outline: none;
+    box-shadow: none;
+    border-color: pink;
+}
+
+#filter {
+    width: 60%;
+    margin: auto;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+#filter .my_btn {
+    padding: 0;
+    margin: 0.5%;
+    width: 10%;
+}
+
+.type_hidden, .name_hidden {
+    display: none !important;
 }
 
 .Normal{background-color: #A8A77A}
@@ -70,3 +107,7 @@ body {
 .Dark {border-color:#705746 !important}
 .Steel {border-color:#B7B7CE !important}
 .Fairy {border-color:#D685AD !important}
+
+.inactive {
+    background-color: rgb(202, 202, 202);
+}
