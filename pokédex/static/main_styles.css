@@ -1,0 +1,88 @@
+
+body {
+    font-family: 'Comic Sans MS' !important;
+    background-color: rgb(255, 222, 217) !important;
+}
+
+#list_view {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.list_card {
+    box-sizing: border-box;
+    cursor: pointer;
+    padding: 1%;
+    margin: 1%;
+    width: 25% !important;
+    border-width: 4px !important;
+    border-style: inset !important;
+    border-radius: 10px !important;
+}
+
+.list_card:hover {
+    border-color: gray !important;
+}
+
+.list_id {color: rgb(168, 151, 151); font-size: 0.9em;}
+.list_name {
+    font-weight: bolder !important;
+    font-style: italic;
+}
+
+.artwork {height: 300px !important}
+
+.my_btn {
+    margin: 1%;
+    padding: 2%;
+    border-radius: 5px;
+    text-transform: uppercase;
+    color: white;
+    font-weight: bold;
+    font-size: 0.75em;
+    width: 33%;
+}
+
+input[type='radio'] {
+    margin: 1%;
+}
+
+#pokésearch {
+    margin: 1% auto;
+    width: 50%;
+}
+#pokésearch:focus {
+    outline: none;
+    box-shadow: none;
+    border-color: pink;
+}
+
+#filter {
+    width: 70%;
+    margin: auto;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+#filter .my_btn {
+    font-size: 0.7em;
+    box-sizing: border-box;
+    padding: 0.8%;
+    margin: 0.5%;
+    width: 10%;
+    font-weight: bold;
+}
+
+.my_btn:focus {
+    outline: none;
+}
+
+.type_hidden, .name_hidden {
+    display: none !important;
+}
+
+.inactive {
+    background-color: rgb(202, 202, 202) !important;
+}

@@ -1,0 +1,126 @@
+body {
+    font-family: 'Comic Sans MS' !important;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+}
+
+#sidebar {
+    height: 100%;
+    grid-column: 1/2;
+}
+#main {
+    grid-column: 2/3;
+}
+
+.list_card {
+    width: 33% !important;
+    box-sizing: border-box;
+    padding: 1%;
+    margin: 1%;
+    border-width: 4px !important;
+    border-style: inset !important;
+    border-radius: 10px !important;
+}
+
+.list_id {color: rgb(168, 151, 151); font-size: 0.9em;}
+
+.list_name {
+    font-weight: bolder !important;
+    font-style: italic;
+}
+
+.my_btn {
+    margin: 1%;
+    padding: 2%;
+    border-radius: 5px;
+    text-transform: uppercase;
+    color: white;
+    font-weight: bold;
+    font-size: 0.75em;
+    width: 33%;
+}
+
+.statbar {
+    height: 15px;
+    box-shadow: inset 1px 4px 0 rgba(255,255,255,.4), inset -1px -1px 0 rgba(0,0,0,.3)
+}
+
+.info_table {
+    margin: 1%;
+    border-width: 4px !important;
+    border-style: solid !important;
+
+}
+
+.table_header {
+    border: none;
+    width: 100% !important;
+    color: white;
+    text-align: center;
+}
+
+tr {
+    display: flex !important;
+    align-items: center;
+    height: 40px !important;
+}
+
+.statname, .statvalue {
+    width: 15%;
+}
+
+#next {
+    margin-left: auto;
+}
+
+#next, #previous {
+    text-decoration: none;
+    color: gray;
+}
+
+#next:hover, #previous:hover {
+    text-decoration: underline;
+    color: black;
+}
+
+.form_wrapper {
+    cursor: pointer;
+    display: flex;
+    background-color: white;
+    padding: 1%;
+    margin: 5%;
+    border-radius: 4px;
+}
+
+.form_wrapper:not(.active) {
+    background-color: rgb(172, 172, 172);
+    color: white;
+}
+
+.form_wrapper:not(.active):hover {
+    background-color: white;
+    color: black;
+}
+
+.form_name {
+    align-self: center;
+}
+
+.form {display: flex; flex-flow: row wrap;}
+.disabled_form { display: none;}
+
+.miscellaneous td, .miscellaneous th {
+    border: none;
+    width: 25%;
+    margin-bottom: 2% !important;
+    text-align: center;
+}
+
+.training td, .training th {
+    border: none;
+}
+.training th {width: 35%;}
+.training td {width: 65%;}
+
+.artwork {height: 300px !important}

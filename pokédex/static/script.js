@@ -1,3 +1,6 @@
+
+let filter_set = new Set()
+
 function pokésearch(event) {
     var query = event.target.value.toLowerCase();
     document.querySelectorAll(`.card`).forEach((element) => {
@@ -8,10 +11,6 @@ function pokésearch(event) {
         };
     })
 }
-
-
-
-let filter_set = new Set()
 
 function includes_array(arr1, arr2) {
     var included = true
@@ -42,8 +41,15 @@ function type_filter(event) {
     })
 }
 
+function pokemon_link(event) {
+    var pokemon = event.target.closest('.list_card').id;
+    console.log(pokemon);
+    window.open(`/pokemon/${pokemon}`, '_self');
+}
+
 document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('pokésearch').addEventListener('keyup', pokésearch);
     document.querySelectorAll('.inactive').forEach((button) => { button.addEventListener('click', type_filter) })
+    document.querySelectorAll('.list_card').forEach((card) => { card.addEventListener('click', pokemon_link) })
 })
 

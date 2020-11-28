@@ -1,0 +1,170 @@
+<head>
+    <title>Pokédex</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='type_styles.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='individual_styles.css')}}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css"
+        integrity="sha384-DhY6onE6f3zzKbjUPRc2hOzGAdEf4/Dz+WJwBvEYL/lkkIsI3ihufq9hk9K4lVoK" crossorigin="anonymous">
+    <script src="{{url_for('static', filename='individual_script.js')}}"></script>
+</head>
+
+<div id="sidebar" class="{{forms[0]['types'][0]}}">
+    {% for form in forms %}
+    <div id="{{form['name'].lower()}}" class="form_wrapper {% if loop.index == 1 %} active {% endif %}">
+        <img src="{{form['sprite']}}">
+        <span class="form_name">{{form['name']}}</span>
+    </div>
+    {% endfor %}
+</div>
+<div id="main">
+    <div style="display: flex; padding: 0.7%;">
+        {% if forms[0]['previous'][0] != none %}
+        <a id="previous" href="/pokemon/{{forms[0]['previous'][0]}}">
+            <- {{forms[0]['previous'][1]}} {{forms[0]['previous'][0]}}</a>
+                {% endif %}
+                {% if forms[0]['next'][0] != none %}
+                <a id="next" href="/pokemon/{{forms[0]['next'][0]}}">{{forms[0]['next'][1]}} {{forms[0]['next'][0]}}
+                    -></a>
+                {% endif %}
+    </div>
+    {% for species in forms %}
+    <div id="{{species['name'].lower()}}"
+        class="form {% if loop.index != 1 %} disabled_form {% else %} current_form {% endif %}">
+        <div class="card list_card border_only {{species['types'][0]}}"
+            data-types="{% for type in species['types'] %} {{type.lower()}} {% endfor %}" style="width: 18rem;">
+            <img style="min-height: 80%;" src="{{species['artwork']}}" class="card-img-top artwork" alt="...">
+            <div class="card-body">
+                <h5 class="list_name">
+                    {{species['name']}} <span class="list_id"> #{{species['id']}} </span></h5>
+                <div class="type-wrapper">
+                    {% for type in species['types'] %}
+                    <span class="my_btn {{type}}">
+                        {{type}}
+                    </span>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div style="display: flex; flex-direction: column; width: 50%;">
+            <table style="width: 100%;" class="info_table table table-borderless {{species['types'][0]}} border_only">
+                <tr class="{{species['types'][0]}}">
+                    <th class="table_header">Stats</th>
+                </tr>
+                <tr>
+                    <th class="statname">HP</th>
+                    <td class="statvalue">{{species['stats'][0][0]}}</td>
+                    <td style="width: 70%;" id="flex-cell">
+                        <div class="statbar"
+                            style="width: {{species['stats'][0][1]}}%; background-color: {{species['stats'][0][2]}}">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="statname">Attack</th>
+                    <td class="statvalue">{{species['stats'][1][0]}}</td>
+                    <td style="width: 70%;">
+                        <div class="statbar"
+                            style="width: {{species['stats'][1][1]}}%; background-color: {{species['stats'][1][2]}}">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="statname">Defense</th>
+                    <td class="statvalue">{{species['stats'][2][0]}}</td>
+                    <td style="width: 70%;">
+                        <div class="statbar"
+                            style="width: {{species['stats'][2][1]}}%; background-color: {{species['stats'][2][2]}}">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="statname">Sp.Atk</th>
+                    <td class="statvalue">{{species['stats'][3][0]}}</td>
+                    <td style="width: 70%;">
+                        <div class="statbar"
+                            style="width: {{species['stats'][3][1]}}%; background-color: {{species['stats'][3][2]}}">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="statname">Sp.Def</th>
+                    <td class="statvalue">{{species['stats'][4][0]}}</td>
+                    <td style="width: 70%;">
+                        <div class="statbar"
+                            style="width: {{species['stats'][4][1]}}%; background-color: {{species['stats'][4][2]}}">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="statname">Speed</th>
+                    <td class="statvalue">{{species['stats'][5][0]}}</td>
+                    <td style="width: 70%;">
+                        <div class="statbar"
+                            style="width: {{species['stats'][5][1]}}%; background-color: {{species['stats'][5][2]}}">
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <table style="width: 100%;"
+                class="table info_table table_borderless miscellaneous {{species['types'][0]}} border_only">
+                <tr class="{{species['types'][0]}}">
+                    <th class="table_header">Dex Info</th>
+                </tr>
+                <tr>
+                    <th>Gen</th>
+                    <th>Species</th>
+                    <th>Height</th>
+                    <th>Weight</th>
+                </tr>
+                <tr>
+                    <td>{{species['gen']}}</td>
+                    <td>{{species['species_title']}}</td>
+                    <td>{{species['height']}} m</td>
+                    <td>{{species['weight']}} kg</td>
+                </tr>
+            </table>
+        </div>
+        <table style="width: 50%; height: 30%;"
+            class="table info_table table_borderless training {{species['types'][0]}} border_only">
+            <tr class="{{species['types'][0]}}">
+                <th class="table_header">Training</th>
+            </tr>
+            <tr>
+                <th>EV Yield</th>
+                <td> {{species['ev_yield']}}</td>
+            </tr>
+            <tr>
+                <th>Catch Rate</th>
+                <td> {{species['catch_rate']}}</td>
+            </tr>
+            <tr>
+                <th>Base Friendship</th>
+                <td> {{species['base_friendship']}}</td>
+            </tr>
+            <tr>
+                <th>Base Experience</th>
+                <td> {{species['base_exp']}}</td>
+            </tr>
+            <tr>
+                <th>Growth Rate</th>
+                <td> {{species['growth']}}</td>
+            </tr>
+        </table>
+        <table style="width: 45%;" id="abilities"
+            class="table info_table table_borderless training {{species['types'][0]}} border_only">
+            <tr class="{{species['types'][0]}}">
+                <th class="table_header">Abilities</th>
+            </tr>
+            {% for ability in species['abilities'] %}
+                <tr>
+                    <td>
+                        <strong>{{ability['slot']}}</strong> - {{ability['name']}}
+                    </td>
+                    <td>
+                        {{ability['description']}}
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+    {% endfor %}
+</div>

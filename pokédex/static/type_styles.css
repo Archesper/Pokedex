@@ -1,0 +1,37 @@
+.Normal:not(.border_only){background-color: #A8A77A}
+.Fire:not(.border_only) {background-color:#EE8130}
+.Water:not(.border_only) {background-color:#6390F0}
+.Electric:not(.border_only) {background-color:#F7D02C}
+.Grass:not(.border_only) {background-color:#7AC74C}
+.Ice:not(.border_only) {background-color:#96D9D6}
+.Fighting:not(.border_only) {background-color:#C22E28}
+.Poison:not(.border_only) {background-color:#A33EA1}
+.Ground:not(.border_only) {background-color:#E2BF65}
+.Flying:not(.border_only) {background-color:#A98FF3}
+.Psychic:not(.border_only){background-color:#F95587}
+.Bug:not(.border_only) {background-color:#A6B91A}
+.Rock:not(.border_only) {background-color:#B6A136}
+.Ghost:not(.border_only) {background-color:#735797}
+.Dragon:not(.border_only) {background-color:#6F35FC}
+.Dark:not(.border_only) {background-color:#705746}
+.Steel:not(.border_only) {background-color:#B7B7CE}
+.Fairy:not(.border_only) {background-color:#D685AD}
+
+.Normal{border-color: #A8A77A !important}
+.Fire {border-color:#EE8130 !important}
+.Water {border-color:#6390F0 !important}
+.Electric {border-color:#F7D02C !important}
+.Grass {border-color:#7AC74C !important}
+.Ice {border-color:#96D9D6 !important}
+.Fighting {border-color:#C22E28 !important}
+.Poison {border-color:#A33EA1 !important}
+.Ground {border-color:#E2BF65 !important}
+.Flying {border-color:#A98FF3 !important}
+.Psychic{border-color:#F95587 !important}
+.Bug {border-color:#A6B91A !important}
+.Rock {border-color:#B6A136 !important}
+.Ghost {border-color:#735797 !important}
+.Dragon {border-color:#6F35FC !important}
+.Dark {border-color:#705746 !important}
+.Steel {border-color:#B7B7CE !important}
+.Fairy {border-color:#D685AD !important}
